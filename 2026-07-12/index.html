@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日 AI 又行了 · 2026年7月12日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & BASE ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #f5f0e8;
+  --cream-light: #faf7f0;
+  --paper: #fdfbf5;
+  --ink: #1a1a1a;
+  --ink-soft: #3d3d3d;
+  --ink-faded: #6b6b6b;
+  --bookmark: #8b1a1a;
+  --bookmark-deep: #6b1010;
+  --gold: #b8860b;
+  --gold-soft: #c9a84c;
+  --border: #d4c5a9;
+  --border-soft: #e8dfca;
+  --accent-blue: #2c4a6e;
+  --serif-cn: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --serif-en: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+html { scroll-behavior: smooth; font-size: 17px; }
+
+body {
+  font-family: var(--serif-cn);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.85;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paper texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(184,134,11,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139,26,26,0.02) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  border-bottom: 3px double var(--border);
+  background: var(--paper);
+}
+.masthead-brand {
+  font-family: var(--serif-en);
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  margin-bottom: 0.5rem;
+}
+.masthead-title {
+  font-family: var(--serif-cn);
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+.masthead-date {
+  font-family: var(--serif-cn);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+  letter-spacing: 0.1em;
+}
+.masthead-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--bookmark);
+  margin: 1rem auto 0;
+}
+
+/* ============ CONTENT WRAPPER ============ */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.section:last-child {
+  border-bottom: none;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.section-label {
+  font-family: var(--serif-cn);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bookmark);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--bookmark);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--serif-cn);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+.section-sub {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  letter-spacing: 0.05em;
+}
+
+/* ============ TIANSHI SECTION ============ */
+.tianshi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 640px) {
+  .tianshi-grid { grid-template-columns: 1fr; }
+}
+.tianshi-main {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+.tianshi-date {
+  margin-bottom: 1rem;
+}
+.tianshi-date .lunar {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.tianshi-date .ganzhi {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-family: var(--serif-en);
+  letter-spacing: 0.05em;
+}
+.tianshi-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+}
+.tianshi-meta .jieqi {
+  background: var(--bookmark);
+  color: var(--cream-light);
+  padding: 0.15rem 0.6rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+.xiaoliuren {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 1rem;
+}
+.xiaoliuren .gua-name {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bookmark);
+  margin-bottom: 0.3rem;
+}
+.xiaoliuren .gua-desc {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.tianshi-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.strategy-card, .health-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--bookmark);
+}
+.strategy-label, .health-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--bookmark);
+  margin-bottom: 0.4rem;
+}
+.strategy-text, .health-text {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.quote-block {
+  background: var(--paper);
+  border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin-top: 1rem;
+}
+.quote-block blockquote {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.quote-block cite {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  margin-top: 0.5rem;
+  font-style: normal;
+}
+
+/* ============ NEWS SECTION ============ */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.news-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.news-num {
+  font-family: var(--serif-cn);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bookmark);
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  padding-top: 0.1rem;
+}
+.news-content {
+  flex: 1;
+}
+.news-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+.news-desc {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.insight-box {
+  background: linear-gradient(135deg, var(--paper) 0%, var(--cream-light) 100%);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+.insight-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.insight-box p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* ============ ARTICLE SECTION ============ */
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+.article-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+.article-summary {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+}
+.article-sections {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.article-sections li {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+.article-sections li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--bookmark);
+  font-size: 0.6rem;
+  top: 0.5rem;
+}
+.article-source {
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* ============ BOOK SECTION ============ */
+.book-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 2px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.book-info {
+  flex: 1;
+}
+.book-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.book-meta {
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+.book-concept {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.8rem;
+  background: var(--cream);
+  border-radius: 2px;
+  border-left: 2px solid var(--gold);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 3px double var(--border);
+  background: var(--paper);
+}
+.footer-text {
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+}
+.footer-brand {
+  font-family: var(--serif-en);
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ============ EMPTY STATE ============ */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.3s; }
+.section:nth-child(4) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+    <div class="masthead-brand">The Daily Dispatch</div>
+    <h1 class="masthead-title">今日 AI 又行了</h1>
+    <div class="masthead-date">2026年7月12日 星期日</div>
+    <div class="masthead-rule"></div>
+</header>
+
+<main class="content">
+    <div class="empty-state">赛博天师今日未出卦</div>
+    
+        <div class="section news-section">
+            <div class="section-header">
+                <span class="section-label">贰</span>
+                <h2 class="section-title">商业资讯速览</h2>
+                <span class="section-sub">Business Briefing</span>
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <span class="news-num">壹</span>
+                    <div class="news-content">
+                        <h3 class="news-title">SK海力士265亿美元美国上市，CEO称存储芯片短缺或延至2030年后</h3>
+                        <p class="news-desc">SK海力士完成美股史上最大外国公司ADS发行之一，融资265亿美元。CEO郭鲁正表示AI数据中心抢购HBM挤压通用存储供给，客户纷纷签长期合约锁定产能，电脑手机汽车领域供应缺口加剧。</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <span class="news-num">贰</span>
+                    <div class="news-content">
+                        <h3 class="news-title">蚂蚁集团战略投资薄荷健康持股超28%，"AI+健康管理"落关键一子</h3>
+                        <p class="news-desc">蚂蚁集团成为薄荷健康最大外部股东，双方围绕体重管理共建AI健康服务。蚂蚁阿福App已上线首期功能，调用薄荷160万条食物数据库。健康事业群已与数字支付、数字金融并列为蚂蚁三大战略支柱。</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <span class="news-num">叁</span>
+                    <div class="news-content">
+                        <h3 class="news-title">中国拟允许顶尖AI企业购买英伟达H200芯片，国产算力瓶颈浮现</h3>
+                        <p class="news-desc">据The Information报道，北京计划让国内头部AI公司限量采购英伟达H200。分析人士认为此举暴露国产AI芯片在高端训练场景的关键瓶颈，也折射出中美芯片博弈的新动态。</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <span class="news-num">肆</span>
+                    <div class="news-content">
+                        <h3 class="news-title">中国对氦气实施临时出口禁令，半导体供应链安全再受关注</h3>
+                        <p class="news-desc">商务部、海关总署宣布即刻禁止氦气出口。外界认为美伊冲突导致氦气供应短缺是导火索，但也凸显亚洲半导体生产国亟需解决关键材料供应链安全问题。</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <span class="news-num">伍</span>
+                    <div class="news-content">
+                        <h3 class="news-title">长征十号乙首飞成功回收助推器，中国可复用火箭技术重大突破</h3>
+                        <p class="news-desc">长征十号乙从海南商业航天发射场升空，一子级通过网捕系统成功回收，同时成功入轨卫星。这是中国首次实现运载火箭一子级可控回收，标志追赶SpaceX可复用技术的重要一步。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <div class="insight-label">编辑洞察</div>
+                <p>AI基础设施的"军备竞赛"正从算力芯片蔓延到存储、能源和关键材料——当SK海力士CEO说短缺延续到2030年，意味着AI基建的瓶颈远未解除。对"AI+教育/舞蹈"领域而言，算力成本长期高企反而是差异化机会：用更轻量化的端侧模型和垂直场景数据，绕开大厂的重装算力赛道。</p>
+            </div>
+        </div>
+    <div class="empty-state">今日暂无公众号文章</div>
+    
+        <div class="section book-section">
+            <div class="section-header">
+                <span class="section-label">肆</span>
+                <h2 class="section-title">每日一书</h2>
+                <span class="section-sub">Book of the Day</span>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <h3 class="book-title">《存在与时间》</h3>
+                    <div class="book-meta">
+                        <span></span>
+                        
+                        
+                    </div>
+                    <div class="book-concept">核心概念：Dasein</div>
+                </div>
+            </div>
+        </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-text">
+        <span class="footer-brand">Today AI Works Again</span><br>
+        数据来源：赛博天师系统 · 网络资讯聚合 · 公众号「今天 AI 又行了」· 每日读书笔记<br>
+        由 Hermes AI 自动生成
+    </div>
+</footer>
+
+</body>
+</html>

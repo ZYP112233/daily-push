@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日 AI 又行了 · 2026年7月8日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & BASE ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #f5f0e8;
+  --cream-light: #faf7f0;
+  --paper: #fdfbf5;
+  --ink: #1a1a1a;
+  --ink-soft: #3d3d3d;
+  --ink-faded: #6b6b6b;
+  --bookmark: #8b1a1a;
+  --bookmark-deep: #6b1010;
+  --gold: #b8860b;
+  --gold-soft: #c9a84c;
+  --border: #d4c5a9;
+  --border-soft: #e8dfca;
+  --accent-blue: #2c4a6e;
+  --serif-cn: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --serif-en: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+html { scroll-behavior: smooth; font-size: 17px; }
+
+body {
+  font-family: var(--serif-cn);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.85;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paper texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(184,134,11,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139,26,26,0.02) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  border-bottom: 3px double var(--border);
+  background: var(--paper);
+}
+.masthead-brand {
+  font-family: var(--serif-en);
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  margin-bottom: 0.5rem;
+}
+.masthead-title {
+  font-family: var(--serif-cn);
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+.masthead-date {
+  font-family: var(--serif-cn);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+  letter-spacing: 0.1em;
+}
+.masthead-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--bookmark);
+  margin: 1rem auto 0;
+}
+
+/* ============ CONTENT WRAPPER ============ */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.section:last-child {
+  border-bottom: none;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.section-label {
+  font-family: var(--serif-cn);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bookmark);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--bookmark);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--serif-cn);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+.section-sub {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  letter-spacing: 0.05em;
+}
+
+/* ============ TIANSHI SECTION ============ */
+.tianshi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 640px) {
+  .tianshi-grid { grid-template-columns: 1fr; }
+}
+.tianshi-main {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+.tianshi-date {
+  margin-bottom: 1rem;
+}
+.tianshi-date .lunar {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.tianshi-date .ganzhi {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-family: var(--serif-en);
+  letter-spacing: 0.05em;
+}
+.tianshi-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+}
+.tianshi-meta .jieqi {
+  background: var(--bookmark);
+  color: var(--cream-light);
+  padding: 0.15rem 0.6rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+.xiaoliuren {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 1rem;
+}
+.xiaoliuren .gua-name {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bookmark);
+  margin-bottom: 0.3rem;
+}
+.xiaoliuren .gua-desc {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.tianshi-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.strategy-card, .health-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--bookmark);
+}
+.strategy-label, .health-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--bookmark);
+  margin-bottom: 0.4rem;
+}
+.strategy-text, .health-text {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.quote-block {
+  background: var(--paper);
+  border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin-top: 1rem;
+}
+.quote-block blockquote {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.quote-block cite {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  margin-top: 0.5rem;
+  font-style: normal;
+}
+
+/* ============ NEWS SECTION ============ */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.news-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.news-num {
+  font-family: var(--serif-cn);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bookmark);
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  padding-top: 0.1rem;
+}
+.news-content {
+  flex: 1;
+}
+.news-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+.news-desc {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.insight-box {
+  background: linear-gradient(135deg, var(--paper) 0%, var(--cream-light) 100%);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+.insight-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.insight-box p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* ============ ARTICLE SECTION ============ */
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+.article-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+.article-summary {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+}
+.article-sections {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.article-sections li {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+.article-sections li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--bookmark);
+  font-size: 0.6rem;
+  top: 0.5rem;
+}
+.article-source {
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* ============ BOOK SECTION ============ */
+.book-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 2px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.book-info {
+  flex: 1;
+}
+.book-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.book-meta {
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+.book-concept {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.8rem;
+  background: var(--cream);
+  border-radius: 2px;
+  border-left: 2px solid var(--gold);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 3px double var(--border);
+  background: var(--paper);
+}
+.footer-text {
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+}
+.footer-brand {
+  font-family: var(--serif-en);
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ============ EMPTY STATE ============ */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.3s; }
+.section:nth-child(4) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+    <div class="masthead-brand">The Daily Dispatch</div>
+    <h1 class="masthead-title">今日 AI 又行了</h1>
+    <div class="masthead-date">2026年7月8日 星期三</div>
+    <div class="masthead-rule"></div>
+</header>
+
+<main class="content">
+    
+        <div class="section tianshi-section">
+            <div class="section-header">
+                <span class="section-label">壹</span>
+                <h2 class="section-title">赛博天师</h2>
+                <span class="section-sub">Daily Divination</span>
+            </div>
+            <div class="tianshi-grid">
+                <div class="tianshi-main">
+                    <div class="tianshi-date">
+                        <span class="lunar">丙午年五月廿二</span>
+                        <span class="ganzhi">丙午年 · 甲午月 · 癸未日 · 丙辰时</span>
+                    </div>
+                    <div class="tianshi-meta">
+                        <span class="jieqi">夏至（日最长，阳气极盛转阴）</span>
+                        <span class="naiyin">纳音 · 杨柳木</span>
+                    </div>
+                    <div class="xiaoliuren">
+                        <span class="gua-name">空亡</span>
+                        <span class="gua-desc">音信稀时，虚空之象</span>
+                    </div>
+                </div>
+                <div class="tianshi-side">
+                    <div class="strategy-card">
+                        <div class="strategy-label">今日策略</div>
+                        <div class="strategy-text">守静、借力、不主动出击。适合学习研究、独处思考、整理复盘。避免重大决策、主动社交、签约投资。</div>
+                    </div>
+                    <div class="health-card">
+                        <div class="health-label">养生提醒</div>
+                        <div class="health-text">辰时（07:00-09:00）胃经当令，必须吃早餐。夏至宜食荷叶粥、丝瓜汤、鸭肉（清补不上火）。今日忌神为水，少饮冰冷之物，以温热饮食养脾胃。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-block"><blockquote>「祸兮福之所倚，福兮祸之所伏。」<cite>——《道德经》</cite></blockquote></div>
+        </div>
+    <div class="empty-state">今日暂无商业资讯</div>
+    <div class="empty-state">今日暂无公众号文章</div>
+    <div class="empty-state">今日暂无每日一书</div>
+</main>
+
+<footer class="footer">
+    <div class="footer-text">
+        <span class="footer-brand">Today AI Works Again</span><br>
+        数据来源：赛博天师系统 · 网络资讯聚合 · 公众号「今天 AI 又行了」· 每日读书笔记<br>
+        由 Hermes AI 自动生成
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=430, initial-scale=1.0, maximum-scale=1.0">
+<title>今日 AI 又行了 · 2026年7月13日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #f5f0e8;
+  --cream-light: #faf7f0;
+  --paper: #fdfbf5;
+  --ink: #1a1a1a;
+  --ink-soft: #3d3d3d;
+  --ink-faded: #6b6b6b;
+  --bookmark: #8b1a1a;
+  --bookmark-deep: #6b1010;
+  --gold: #b8860b;
+  --gold-soft: #c9a84c;
+  --border: #d4c5a9;
+  --border-soft: #e8dfca;
+  --accent-blue: #2c4a6e;
+  --serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+  --serif-en: 'Cormorant Garamond', serif;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--serif-cn);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.85;
+  max-width: 430px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 960px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.08);
+    min-height: 100vh;
+  }
+  .content-wrapper {
+    padding: 2rem 3rem;
+  }
+  .tianshi-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .tianshi-card.full {
+    grid-column: 1 / -1;
+  }
+  .charts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .news-columns {
+    column-count: 2;
+    column-gap: 1.5rem;
+  }
+  .news-item {
+    break-inside: avoid;
+  }
+  .learning-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .policy-article-body {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 报头 ── */
+.masthead {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 3px double var(--border);
+  background: var(--paper);
+}
+.masthead-brand {
+  font-family: var(--serif-en);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+}
+.masthead-title {
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin: 0.3rem 0;
+}
+.masthead-date {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+}
+.masthead-rule {
+  width: 50px;
+  height: 2px;
+  background: var(--bookmark);
+  margin: 0.8rem auto 0;
+}
+
+/* ── 导语 ── */
+.summary {
+  background: var(--paper);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ── 指标条 ── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+.metric {
+  text-align: center;
+  padding: 0.8rem 0.3rem;
+  border-right: 1px solid var(--border-soft);
+}
+.metric:last-child { border-right: none; }
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bookmark);
+  line-height: 1.2;
+}
+.metric-label {
+  font-size: 0.65rem;
+  color: var(--ink-faded);
+  margin-top: 0.2rem;
+}
+
+/* ── 内容区 ── */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 1rem;
+}
+
+/* ── 板块通用 ── */
+.section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.section:last-child { border-bottom: none; }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.section-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--bookmark);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--bookmark);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+.section-sub {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+}
+
+/* ── 赛博天师 ── */
+.tianshi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.tianshi-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  border-radius: 2px;
+}
+.tianshi-card.full { grid-column: 1 / -1; }
+.card-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--bookmark);
+  margin-bottom: 0.3rem;
+}
+.card-text { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.6; }
+.gua-name { font-size: 1.1rem; font-weight: 700; color: var(--bookmark); margin-bottom: 0.2rem; }
+.gua-desc { font-size: 0.75rem; color: var(--ink-faded); font-style: italic; }
+.lunar-text { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+.ganzhi-text { font-size: 0.7rem; color: var(--ink-faded); }
+.jieqi-tag {
+  display: inline-block;
+  background: var(--bookmark);
+  color: var(--cream-light);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.65rem;
+  margin-top: 0.3rem;
+}
+
+/* ── 图表 ── */
+.chart-container {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 2px;
+  text-align: center;
+}
+.chart-title {
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ── 商业资讯 ── */
+.news-item {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.news-item:last-child { border-bottom: none; }
+.news-num { font-weight: 700; font-size: 1rem; color: var(--bookmark); flex-shrink: 0; width: 20px; }
+.news-content { flex: 1; }
+.news-title { font-size: 0.9rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.3rem; }
+.news-desc { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* ── 洞察 ── */
+.insight-box {
+  background: linear-gradient(135deg, var(--paper) 0%, var(--cream-light) 100%);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 2px;
+}
+.insight-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.insight-text { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; }
+
+/* ── 公众号文章 ── */
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 2px;
+}
+.article-title { font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.6rem; }
+.article-summary {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--border);
+  margin-bottom: 1rem;
+}
+.article-section { margin-bottom: 0.8rem; }
+.article-section-title { font-size: 0.85rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.3rem; }
+.article-section-content { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* ── 每日一书 ── */
+.book-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 2px;
+}
+.book-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.book-meta { font-size: 0.7rem; color: var(--ink-faded); margin-bottom: 0.6rem; }
+.book-concept {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.8rem;
+  background: var(--cream);
+  border-radius: 2px;
+  border-left: 2px solid var(--gold);
+  margin-bottom: 0.6rem;
+}
+.book-quote {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  padding: 0.5rem 0;
+  border-top: 1px dashed var(--border-soft);
+}
+
+/* ── 每日学习 ── */
+.learning-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.learning-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 2px;
+}
+.learning-card.dao { border-left: 3px solid var(--bookmark); }
+.learning-card.finance { border-left: 3px solid var(--accent-blue); }
+.learning-quote { font-size: 0.9rem; font-weight: 500; line-height: 1.6; margin-bottom: 0.5rem; }
+.learning-source { font-size: 0.7rem; color: var(--ink-faded); margin-bottom: 0.8rem; }
+.learning-text { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 0.5rem; }
+.learning-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--bookmark);
+  margin-bottom: 0.3rem;
+}
+.learning-card.finance .learning-label { color: var(--accent-blue); }
+
+/* ── 政策解读卡 ── */
+.policy-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.policy-header {
+  background: linear-gradient(135deg, var(--bookmark) 0%, var(--bookmark-deep) 100%);
+  color: var(--cream-light);
+  padding: 1.2rem 1rem;
+}
+.policy-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.policy-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.policy-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.policy-targets {
+  font-size: 0.7rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+.policy-subsection {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.policy-subsection:last-of-type { border-bottom: none; }
+.policy-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--bookmark);
+  margin-bottom: 0.8rem;
+  padding-left: 0.6rem;
+  border-left: 3px solid var(--bookmark);
+}
+.policy-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  padding-left: 0.6rem;
+}
+.policy-point-num {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--bookmark);
+  color: var(--cream-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.policy-article-card {
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.policy-article-tag {
+  background: var(--cream);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--bookmark);
+  border-bottom: 1px solid var(--border-soft);
+}
+.policy-article-body {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.policy-original {
+  background: #f0ece4;
+  padding: 0.7rem;
+  border-right: 1px solid var(--border-soft);
+}
+.policy-original-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--ink-faded);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+.policy-original-text {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-style: italic;
+}
+.policy-plain {
+  background: var(--paper);
+  padding: 0.7rem;
+}
+.policy-plain-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--bookmark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+.policy-plain-text {
+  font-size: 0.75rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.policy-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+.policy-compare-table th {
+  background: var(--cream);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  border-bottom: 2px solid var(--border);
+}
+.policy-compare-table th.now-col {
+  color: var(--bookmark);
+}
+.policy-compare-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border-soft);
+  line-height: 1.5;
+  vertical-align: top;
+}
+.cmp-dim { font-weight: 600; color: var(--ink); }
+.cmp-before { color: var(--ink-faded); }
+.cmp-after { color: var(--bookmark); font-weight: 500; background: rgba(139,26,26,0.04); }
+.policy-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.check-box {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  margin-top: 2px;
+}
+.policy-timeline {
+  position: relative;
+  padding-left: 1.2rem;
+}
+.policy-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  font-size: 0.78rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: -1.2rem;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: var(--bookmark);
+  border-radius: 50%;
+  border: 2px solid var(--paper);
+  z-index: 1;
+}
+.timeline-date {
+  font-weight: 700;
+  color: var(--bookmark);
+  white-space: nowrap;
+  min-width: 70px;
+}
+.timeline-desc {
+  color: var(--ink-soft);
+}
+.policy-disclaimer {
+  padding: 0.8rem 1rem;
+  background: var(--cream);
+  font-size: 0.65rem;
+  color: var(--ink-faded);
+  text-align: center;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ── 页脚 ── */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 3px double var(--border);
+  background: var(--paper);
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  line-height: 1.8;
+}
+.footer-brand {
+  font-family: var(--serif-en);
+  font-style: italic;
+  color: var(--gold);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.15s; }
+.section:nth-child(3) { animation-delay: 0.2s; }
+.section:nth-child(4) { animation-delay: 0.25s; }
+.section:nth-child(5) { animation-delay: 0.3s; }
+.section:nth-child(6) { animation-delay: 0.35s; }
+.section:nth-child(7) { animation-delay: 0.4s; }
+.section:nth-child(8) { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+    <div class="masthead-brand">The Daily Dispatch</div>
+    <h1 class="masthead-title">今日 AI 又行了</h1>
+    <div class="masthead-date">2026年7月13日 星期一</div>
+    <div class="masthead-rule"></div>
+</header>
+
+<div class="summary">晚间深修，尽在今天的推送。</div>
+
+<div class="metrics">
+    <div class="metric">
+        <div class="metric-value">★★</div>
+        <div class="metric-label">运势</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">0条</div>
+        <div class="metric-label">资讯</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">0</div>
+        <div class="metric-label">主文字数</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">—</div>
+        <div class="metric-label">每日一书</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">✓</div>
+        <div class="metric-label">晚间深修</div>
+    </div>
+</div>
+
+<main class="content-wrapper">
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">伍</span>
+            <h2 class="section-title">每日深修</h2>
+            <span class="section-sub">Evening Study</span>
+        </div>
+        <div class="learning-grid">
+            <div class="learning-card dao">
+                <div class="learning-label">道法详解</div>
+                <div class="learning-quote">「知人者智，自知者明。胜人者有力，自胜者强。」</div>
+                <div class="learning-source">——《道德经》</div>
+                <div class="learning-text">能看透别人叫聪明，能看清自己才是真正的明白。战胜别人只是有力气，战胜自己的惰性与贪念才是真强者。老子告诉我们：人生最大的对手从来不是别人，而是自己。自知是成长的起点，自胜是精进的根本。</div>
+                <div class="learning-text" style="border-top:1px dashed var(--border-soft);padding-top:0.5rem;margin-top:0.5rem;"><strong>实践指引：</strong>每天睡前问自己：今天有没有被情绪牵着走？有没有在该停的时候多做了？工作里与其盯着同事的表现，不如复盘自己哪里可以更好。真正的进步，都发生在向内看的时候。</div>
+            </div>
+            <div class="learning-card finance">
+                <div class="learning-label">金融进阶</div>
+                <div class="learning-quote">MACD顶背离</div>
+                <div class="learning-text">当股价一路创新高，但MACD指标却没有同步创新高，反而走低，这就叫"顶背离"。它意味着上涨的动能正在衰竭，就像一个人跑步速度越来越慢，虽然还在往前冲，但已经力不从心。顶背离是技术分析中判断趋势可能反转的重要预警信号。</div>
+                <div class="learning-text" style="border-top:1px dashed var(--border-soft);padding-top:0.5rem;margin-top:0.5rem;"><strong>实战应用：</strong>发现顶背离时不要急于做空，它只是预警而非确定的卖出信号。最好结合成交量萎缩、K线形态等其他指标综合判断。在高位出现顶背离时，可以考虑分批减仓、收紧止损，保护已有利润。</div>
+                <div class="learning-text" style="font-size:0.7rem;color:var(--ink-faded);margin-top:0.5rem;"><strong>延伸阅读：</strong>推荐《MACD背离技术交易实战技法》（股市风云著），图解清晰，适合入门理解背离的识别与应对。
+
+晚安，愿你自知自胜，心明眼亮 🙏</div>
+            </div>
+        </div>
+    </section>
+    <section class="section policy-section">
+        <div class="section-header">
+            <span class="section-label">陆</span>
+            <h2 class="section-title">政策解读</h2>
+            <span class="section-sub">Policy Brief</span>
+        </div>
+        <div class="policy-card">
+            <div class="policy-header">
+                <div class="policy-title">实施就业优先战略“十五五”规划</div>
+                <div class="policy-meta">
+                    <span class="policy-tag">国务院</span>
+                    <span class="policy-tag">2026年6月17日</span>
+                </div>
+                <div class="policy-targets">适用：全体劳动者、高校毕业生、农民工、退役军人、灵活就业人员、各类用人单位</div>
+            </div>
+
+            <div class="policy-subsection">
+                <div class="policy-subtitle">核心要义</div>
+                <div class="policy-point"><span class="policy-point-num">1</span>把高质量充分就业作为经济社会发展优先目标</div><div class="policy-point"><span class="policy-point-num">2</span>适应AI发展促进就业创业，探索人机协同新型工作形态</div><div class="policy-point"><span class="policy-point-num">3</span>提高教育供给与人才需求匹配度，毕业生就业状况作为办学资源配置重要依据</div><div class="policy-point"><span class="policy-point-num">4</span>推动灵活就业、新就业形态健康发展，建立健全职业伤害保障制度</div><div class="policy-point"><span class="policy-point-num">5</span>大规模开展职业技能培训，健全终身职业技能培训制度</div>
+            </div>
+
+            <div class="policy-subsection">
+                <div class="policy-subtitle">原文 vs 白话解读</div>
+                
+            <div class="policy-article-card">
+                <div class="policy-article-tag">条文4 · AI+就业</div>
+                <div class="policy-article-body">
+                    <div class="policy-original">
+                        <div class="policy-original-label">原文</div>
+                        <div class="policy-original-text">"深入实施‘人工智能+’行动，推动形成更多AI应用场景创新、技术成果转化等创业项目，探索人机协同的新型工作形态"</div>
+                    </div>
+                    <div class="policy-plain">
+                        <div class="policy-plain-label">白话解读</div>
+                        <div class="policy-plain-text">国家鼓励AI创造新工作岗位，不是替代人而是和人协作。对大学老师：AI辅助教学将成为标配，要主动拥抱而非抵触。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="policy-article-card">
+                <div class="policy-article-tag">条文10 · 教育匹配</div>
+                <div class="policy-article-body">
+                    <div class="policy-original">
+                        <div class="policy-original-label">原文</div>
+                        <div class="policy-original-text">"推动高等教育人才培养与经济社会发展需要相适配...将毕业生就业状况作为办学资源配置、教育质量评估、学科专业设置调整、招生计划安排的重要依据"</div>
+                    </div>
+                    <div class="policy-plain">
+                        <div class="policy-plain-label">白话解读</div>
+                        <div class="policy-plain-text">大学专业设置要跟就业挂钩，就业差的专业可能被砍。对大学老师：教学内容要紧跟市场需求，纯理论方向要思考如何与实践结合。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="policy-article-card">
+                <div class="policy-article-tag">条文13 · 高校毕业生</div>
+                <div class="policy-article-body">
+                    <div class="policy-original">
+                        <div class="policy-original-label">原文</div>
+                        <div class="policy-original-text">"健全高校毕业生政策激励、服务保障、困难兜底、权益维护等全链条就业支持体系...挖掘行业龙头企业、专精特新中小企业吸纳就业潜能"</div>
+                    </div>
+                    <div class="policy-plain">
+                        <div class="policy-plain-label">白话解读</div>
+                        <div class="policy-plain-text">国家要给毕业生找更多岗位，鼓励去中小企业。对大学老师：就业指导不只是辅导员的事，专业课老师也要帮学生对接行业。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="policy-article-card">
+                <div class="policy-article-tag">条文11 · 技能培训</div>
+                <div class="policy-article-body">
+                    <div class="policy-original">
+                        <div class="policy-original-label">原文</div>
+                        <div class="policy-original-text">"健全贯穿劳动者学习和职业生涯全过程的终身职业技能培训制度...推广由链主企业牵头的产教评技能生态链"</div>
+                    </div>
+                    <div class="policy-plain">
+                        <div class="policy-plain-label">白话解读</div>
+                        <div class="policy-plain-text">终身学习不再是口号，企业主导的培训会更实用。对大学老师：可以考虑跟企业合作开发培训课程，拓展收入来源。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="policy-article-card">
+                <div class="policy-article-tag">条文19 · 灵活就业</div>
+                <div class="policy-article-body">
+                    <div class="policy-original">
+                        <div class="policy-original-label">原文</div>
+                        <div class="policy-original-text">"推动平台经济创新和健康发展，推动即时配送、网约出行、网络货运、直播电商、线上生活服务等行业发展"</div>
+                    </div>
+                    <div class="policy-plain">
+                        <div class="policy-plain-label">白话解读</div>
+                        <div class="policy-plain-text">灵活就业被正式认可和支持。对创业者：平台经济赛道仍有政策红利。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="policy-article-card">
+                <div class="policy-article-tag">条文21 · 权益保障</div>
+                <div class="policy-article-body">
+                    <div class="policy-original">
+                        <div class="policy-original-label">原文</div>
+                        <div class="policy-original-text">"督促平台企业规范算法、提高透明度，保障新就业形态劳动者对算法规则的知情权、参与权、选择权"</div>
+                    </div>
+                    <div class="policy-plain">
+                        <div class="policy-plain-label">白话解读</div>
+                        <div class="policy-plain-text">外卖骑手、网约车司机等有了算法知情权。对普通人：如果你在做副业/兼职，你的权益有了法律保障。</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="policy-subsection">
+                <div class="policy-subtitle">重点变化前后对比</div>
+                <table class="policy-compare-table">
+                    <thead><tr><th>维度</th><th>此前</th><th class="now-col">现在</th></tr></thead>
+                    <tbody>
+            <tr><td class="cmp-dim">AI与就业</td><td class="cmp-before">鼓励探索</td><td class="cmp-after">明确要求“适应AI发展促进就业创业”</td></tr>
+            <tr><td class="cmp-dim">教育评估</td><td class="cmp-before">学术导向为主</td><td class="cmp-after">就业状况成为办学资源配置“重要依据”</td></tr>
+            <tr><td class="cmp-dim">灵活就业</td><td class="cmp-before">模糊地带</td><td class="cmp-after">正式纳入政策体系，建立职业伤害保障</td></tr>
+            <tr><td class="cmp-dim">技能培训</td><td class="cmp-before">政府主导</td><td class="cmp-after">企业主导+政府补贴，产教评一体化</td></tr>
+            <tr><td class="cmp-dim">算法监管</td><td class="cmp-before">无明确规定</td><td class="cmp-after">平台须规范算法、保障劳动者知情权</td></tr></tbody>
+                </table>
+            </div>
+
+            <div class="policy-subsection">
+                <div class="policy-subtitle">合规自查清单</div>
+                <div class="policy-check"><span class="check-box">□</span>本单位是否已建立毕业生就业跟踪反馈机制？</div><div class="policy-check"><span class="check-box">□</span>教学内容是否融入了AI工具应用？</div><div class="policy-check"><span class="check-box">□</span>是否了解灵活就业人员的社保参保政策？</div><div class="policy-check"><span class="check-box">□</span>校企合作培训课程是否已备案？</div><div class="policy-check"><span class="check-box">□</span>是否关注学科专业动态调整预警？</div>
+            </div>
+
+            <div class="policy-subsection">
+                <div class="policy-subtitle">关键时间线</div>
+                <div class="policy-timeline"><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-date">2026.06.17</span><span class="timeline-desc">国务院正式发布</span></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-date">2026.Q3</span><span class="timeline-desc">各地制定实施方案</span></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-date">2026.Q4</span><span class="timeline-desc">就业状况纳入高校评估</span></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-date">2027</span><span class="timeline-desc">职业伤害保障制度试点扩围</span></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-date">2030</span><span class="timeline-desc">“十五五”目标达成评估</span></div></div>
+            </div>
+
+            <div class="policy-disclaimer">条文内容为示意解读，仅供参考，具体以国务院原文为准。</div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-brand">Today AI Works Again</div>
+    数据来源：赛博天师系统 · 网络资讯聚合 · 公众号「今天 AI 又行了」· 每日读书笔记 · 晚间深修<br>
+    运势评分基于传统术数推演，仅供参考娱乐<br>
+    政策解读仅供参考，具体以官方原文为准<br>
+    由 Hermes AI 自动生成
+</footer>
+
+</body>
+</html>

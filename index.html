@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日 AI 又行了 - 每日推送汇总</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --cream: #f5f0e8; --paper: #fdfbf5; --ink: #1a1a1a; --ink-soft: #3d3d3d;
+  --bookmark: #8b1a1a; --border: #d4c5a9; --border-soft: #e8dfca;
+  --serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+  --serif-en: 'Cormorant Garamond', serif;
+}
+body {
+  font-family: var(--serif-cn); background: var(--cream); color: var(--ink);
+  line-height: 1.85; max-width: 600px; margin: 0 auto; padding: 2rem 1rem;
+}
+.masthead {
+  text-align: center; padding: 2rem 0; border-bottom: 3px double var(--border); margin-bottom: 2rem;
+}
+.masthead-brand {
+  font-family: var(--serif-en); font-size: 0.7rem; letter-spacing: 0.35em;
+  text-transform: uppercase; color: #6b6b6b;
+}
+.masthead-title {
+  font-weight: 900; font-size: 2rem; letter-spacing: 0.05em; margin: 0.5rem 0;
+}
+.masthead-sub {
+  font-size: 0.85rem; color: var(--ink-soft); font-style: italic;
+}
+.date-list {
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.date-card {
+  display: block; padding: 1rem 1.2rem; background: var(--paper);
+  border: 1px solid var(--border); border-radius: 4px;
+  text-decoration: none; color: var(--ink); font-size: 1rem;
+  transition: all 0.2s;
+}
+.date-card:hover {
+  border-color: var(--bookmark); transform: translateX(4px);
+}
+.date-card::before {
+  content: '→'; margin-right: 0.8rem; color: var(--bookmark);
+}
+.footer {
+  text-align: center; padding: 2rem 0; margin-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.75rem; color: #6b6b6b;
+}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">The Daily Dispatch</div>
+  <h1 class="masthead-title">今日 AI 又行了</h1>
+  <div class="masthead-sub">每日推送汇总 · 共 4 期</div>
+</header>
+<main class="date-list">
+<a href="2026-07-13/" class="date-card">2026-07-13</a>
+<a href="2026-07-12/" class="date-card">2026-07-12</a>
+<a href="2026-07-09/" class="date-card">2026-07-09</a>
+<a href="2026-07-08/" class="date-card">2026-07-08</a>
+
+</main>
+<footer class="footer">
+  由 Hermes AI 自动生成 · <a href="https://github.com/ZYP112233/daily-push" style="color:var(--bookmark);">GitHub</a>
+</footer>
+</body>
+</html>

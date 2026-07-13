@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=430, initial-scale=1.0">
+<title>今日 AI 又行了 · 2026年7月9日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --cream: #f5f0e8; --cream-light: #faf7f0; --paper: #fdfbf5;
+  --ink: #1a1a1a; --ink-soft: #3d3d3d; --ink-faded: #6b6b6b;
+  --bookmark: #8b1a1a; --gold: #b8860b; --border: #d4c5a9; --border-soft: #e8dfca;
+  --serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+  --serif-en: 'Cormorant Garamond', serif;
+}
+html { font-size: 16px; }
+body {
+  font-family: var(--serif-cn); background: var(--cream); color: var(--ink);
+  line-height: 1.85; max-width: 430px; margin: 0 auto; -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 768px) {
+  body { max-width: 960px; box-shadow: 0 0 40px rgba(0,0,0,0.08); min-height: 100vh; }
+  .content { padding: 2rem 2.5rem; }
+  .tianshi-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .tianshi-card.full { grid-column: 1 / -1; }
+  .news-columns { column-count: 2; column-gap: 1.5rem; }
+  .news-item { break-inside: avoid; }
+  .ai-grid { grid-template-columns: 1fr 1fr; }
+  .policy-grid { grid-template-columns: 1fr 1fr; }
+}
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+.masthead {
+  position: relative; z-index: 2; text-align: center; padding: 2rem 1rem 1.5rem;
+  border-bottom: 3px double var(--border); background: var(--paper);
+}
+.masthead-brand { font-family: var(--serif-en); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ink-faded); }
+.masthead-title { font-weight: 900; font-size: 2rem; letter-spacing: 0.05em; line-height: 1.2; margin: 0.3rem 0; }
+.masthead-date { font-size: 0.85rem; color: var(--ink-soft); letter-spacing: 0.1em; }
+.masthead-rule { width: 50px; height: 2px; background: var(--bookmark); margin: 0.8rem auto 0; }
+.summary { background: var(--paper); padding: 1rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; border-bottom: 1px solid var(--border-soft); }
+.metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; background: var(--paper); padding: 1rem; border-bottom: 1px solid var(--border); }
+.metric { text-align: center; padding: 0.6rem 0.3rem; background: var(--cream-light); border-radius: 4px; border: 1px solid var(--border-soft); }
+.metric-value { font-size: 1.3rem; font-weight: 700; color: var(--bookmark); line-height: 1.2; margin-bottom: 0.2rem; }
+.metric-label { font-size: 0.7rem; color: var(--ink-soft); letter-spacing: 0.05em; }
+.content { position: relative; z-index: 2; padding: 1.5rem 1rem; }
+.section { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-soft); }
+.section:last-child { border-bottom: none; }
+.section-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+.section-label { font-weight: 700; font-size: 0.9rem; color: var(--bookmark); width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--bookmark); border-radius: 2px; flex-shrink: 0; }
+.section-title { font-weight: 700; font-size: 1.2rem; letter-spacing: 0.05em; }
+.section-sub { font-family: var(--serif-en); font-style: italic; font-size: 0.75rem; color: var(--ink-faded); }
+.tianshi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1rem; }
+.tianshi-card { background: var(--paper); border: 1px solid var(--border); padding: 0.8rem; border-radius: 2px; }
+.tianshi-card.full { grid-column: 1 / -1; }
+.card-label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bookmark); margin-bottom: 0.3rem; }
+.card-text { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.6; }
+.gua-name { font-size: 1.1rem; font-weight: 700; color: var(--bookmark); margin-bottom: 0.2rem; }
+.gua-desc { font-size: 0.75rem; color: var(--ink-faded); font-style: italic; }
+.lunar-text { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+.ganzhi-text { font-size: 0.7rem; color: var(--ink-faded); }
+.jieqi-tag { display: inline-block; background: var(--bookmark); color: var(--cream-light); padding: 0.1rem 0.4rem; border-radius: 2px; font-size: 0.65rem; margin-top: 0.3rem; }
+.insight-box { background: linear-gradient(135deg, var(--paper) 0%, var(--cream-light) 100%); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem; margin-top: 1rem; border-radius: 2px; }
+.insight-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.4rem; }
+.insight-text { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; }
+.news-item { display: flex; gap: 0.8rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border-soft); }
+.news-item:last-child { border-bottom: none; }
+.news-num { font-weight: 700; font-size: 1rem; color: var(--bookmark); flex-shrink: 0; width: 20px; }
+.news-content { flex: 1; }
+.news-title { font-size: 0.9rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.3rem; }
+.news-desc { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.6; }
+.article-card { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; }
+.article-title { font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.6rem; }
+.article-summary { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; padding-left: 0.8rem; border-left: 2px solid var(--border); margin-bottom: 1rem; }
+.article-section { margin-bottom: 0.8rem; }
+.article-section-title { font-size: 0.85rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.3rem; }
+.article-section-content { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.6; }
+.book-card { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; }
+.book-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.book-meta { font-size: 0.7rem; color: var(--ink-faded); margin-bottom: 0.6rem; }
+.book-concept { font-size: 0.8rem; color: var(--ink-soft); padding: 0.5rem 0.8rem; background: var(--cream); border-radius: 2px; border-left: 2px solid var(--gold); margin-bottom: 0.6rem; }
+.book-quote { font-size: 0.75rem; color: var(--ink-soft); font-style: italic; padding: 0.5rem 0; border-top: 1px dashed var(--border-soft); }
+.learning-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.learning-card { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; }
+.learning-card.dao { border-left: 3px solid var(--bookmark); }
+.learning-card.finance { border-left: 3px solid #2c4a6e; }
+.learning-quote { font-size: 0.9rem; font-weight: 500; line-height: 1.6; margin-bottom: 0.5rem; }
+.learning-source { font-size: 0.7rem; color: var(--ink-faded); margin-bottom: 0.8rem; }
+.learning-text { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 0.5rem; }
+.learning-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: var(--bookmark); margin-bottom: 0.3rem; }
+.learning-card.finance .learning-label { color: #2c4a6e; }
+/* AI日报 */
+.ai-hero { background: var(--paper); border: 1px solid var(--border); padding: 1.2rem; border-radius: 2px; margin-bottom: 1rem; }
+.ai-hero-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.ai-hero-stats { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.75rem; color: var(--ink-soft); }
+.ai-hero-stat { display: flex; align-items: center; gap: 0.3rem; }
+.ai-hero-stat-num { font-weight: 700; color: var(--bookmark); }
+.ai-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.ai-nav-item { font-size: 0.7rem; padding: 0.3rem 0.6rem; background: var(--cream); border: 1px solid var(--border); border-radius: 2px; color: var(--ink-soft); text-decoration: none; }
+.ai-nav-item:hover { background: var(--paper); }
+.ai-section { margin-bottom: 1.5rem; }
+.ai-section-title { font-size: 0.9rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.8rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border-soft); }
+.ai-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; }
+.ai-card { background: var(--paper); border: 1px solid var(--border); padding: 0.8rem; border-radius: 2px; }
+.ai-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem; }
+.ai-card-num { font-size: 0.7rem; font-weight: 700; color: var(--bookmark); }
+.ai-card-source { font-size: 0.6rem; padding: 0.15rem 0.4rem; background: var(--cream); border-radius: 2px; color: var(--ink-faded); }
+.ai-card-title { font-size: 0.85rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.3rem; }
+.ai-card-desc { font-size: 0.7rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 0.4rem; }
+.ai-card-link { font-size: 0.65rem; color: var(--bookmark); text-decoration: none; }
+.ai-card-link:hover { text-decoration: underline; }
+/* 政策解读 */
+.policy-header { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; margin-bottom: 1rem; }
+.policy-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.policy-meta { font-size: 0.7rem; color: var(--ink-faded); line-height: 1.6; }
+.policy-points { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; margin-bottom: 1rem; }
+.policy-points-title { font-size: 0.85rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.6rem; }
+.policy-point { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.4rem; padding-left: 1rem; position: relative; }
+.policy-point::before { content: '◆'; position: absolute; left: 0; color: var(--bookmark); font-size: 0.6rem; }
+.policy-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; }
+.policy-card { background: var(--paper); border: 1px solid var(--border); padding: 0.8rem; border-radius: 2px; }
+.policy-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.policy-card-num { font-size: 0.75rem; font-weight: 700; color: var(--ink); }
+.policy-card-tag { font-size: 0.6rem; padding: 0.15rem 0.4rem; background: var(--bookmark); color: var(--cream-light); border-radius: 2px; }
+.policy-card-original { font-size: 0.7rem; color: var(--ink-soft); line-height: 1.5; padding: 0.5rem; background: var(--cream); border-radius: 2px; margin-bottom: 0.5rem; font-style: italic; }
+.policy-card-explain { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.4rem; }
+.policy-card-impact { font-size: 0.7rem; color: var(--bookmark); line-height: 1.5; }
+.policy-compare { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; margin-bottom: 1rem; }
+.policy-compare-title { font-size: 0.85rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.6rem; }
+.policy-compare-table { width: 100%; font-size: 0.7rem; border-collapse: collapse; }
+.policy-compare-table th { text-align: left; padding: 0.4rem; background: var(--cream); font-weight: 600; border-bottom: 1px solid var(--border); }
+.policy-compare-table td { padding: 0.4rem; border-bottom: 1px solid var(--border-soft); color: var(--ink-soft); }
+.policy-checklist { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; margin-bottom: 1rem; }
+.policy-checklist-title { font-size: 0.85rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.6rem; }
+.policy-checklist-item { font-size: 0.7rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.3rem; padding-left: 1.2rem; position: relative; }
+.policy-checklist-item::before { content: '☐'; position: absolute; left: 0; color: var(--bookmark); }
+.policy-timeline { background: var(--paper); border: 1px solid var(--border); padding: 1rem; border-radius: 2px; }
+.policy-timeline-title { font-size: 0.85rem; font-weight: 600; color: var(--bookmark); margin-bottom: 0.6rem; }
+.policy-timeline-item { font-size: 0.7rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.4rem; padding-left: 1rem; border-left: 2px solid var(--border); }
+.policy-timeline-date { font-weight: 600; color: var(--ink); }
+.policy-disclaimer { font-size: 0.65rem; color: var(--ink-faded); font-style: italic; margin-top: 0.8rem; padding-top: 0.5rem; border-top: 1px dashed var(--border-soft); }
+.footer { text-align: center; padding: 1.5rem 1rem; border-top: 3px double var(--border); background: var(--paper); font-size: 0.7rem; color: var(--ink-faded); line-height: 1.8; }
+.footer-brand { font-family: var(--serif-en); font-style: italic; color: var(--gold); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.section { animation: fadeIn 0.5s ease-out; animation-fill-mode: both; }
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.15s; }
+.section:nth-child(3) { animation-delay: 0.2s; }
+.section:nth-child(4) { animation-delay: 0.25s; }
+.section:nth-child(5) { animation-delay: 0.3s; }
+.section:nth-child(6) { animation-delay: 0.35s; }
+.section:nth-child(7) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+<header class="masthead">
+    <div class="masthead-brand">The Daily Dispatch</div>
+    <h1 class="masthead-title">今日 AI 又行了</h1>
+    <div class="masthead-date">2026年7月9日 星期四</div>
+    <div class="masthead-rule"></div>
+</header>
+<div class="summary">5条商业热点、8条AI动态、主文《600亿收购后马斯克终于交卷了...》、共读《刻意忽视》、晚间深修，尽在今天的推送。</div>
+<div class="metrics">
+    <div class="metric"><div class="metric-value">★★</div><div class="metric-label">运势</div></div>
+    <div class="metric"><div class="metric-value">5条</div><div class="metric-label">资讯</div></div>
+    <div class="metric"><div class="metric-value">8条</div><div class="metric-label">AI动态</div></div>
+    <div class="metric"><div class="metric-value">✓</div><div class="metric-label">每日一书</div></div>
+    <div class="metric"><div class="metric-value">✓</div><div class="metric-label">晚间深修</div></div>
+</div>
+<main class="content">
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">贰</span>
+            <h2 class="section-title">商业资讯速览</h2>
+            <span class="section-sub">Business Briefing</span>
+        </div>
+        <div class="news-columns">
+            <div class="news-item">
+                <span class="news-num">壹</span>
+                <div class="news-content">
+                    <div class="news-title">中国计划放行英伟达H200芯片</div>
+                    <div class="news-desc">📝 据The Information独家报道，北京将允许阿里巴巴、字节跳动、DeepSeek等采购有限数量英伟达H200芯片，标志在算力需求持续攀升下中国正适度放宽对美先进AI芯片限制。</div>
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-num">贰</span>
+                <div class="news-content">
+                    <div class="news-title">美联储6月会议纪要：AI跻身三大通胀风险</div>
+                    <div class="news-desc">📝 纪要显示越来越多官员认为AI投资热潮可能成为通胀持续高位的重要推手，与中东战争、关税并列为三大通胀风险。少数官员支持6月即加息，AI首次进入美联储核心通胀考量框架。</div>
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-num">叁</span>
+                <div class="news-content">
+                    <div class="news-title">OpenAI发布GPT-Live实时语音模型</div>
+                    <div class="news-desc">📝 ChatGPT正式迈入实时对话时代。GPT-Live支持实时翻译、听写、语速调整，后台可无缝调用GPT-5.5完成复杂推理。每周已有超1.5亿人使用语音功能与ChatGPT交流，押注"语音即AI入口"。</div>
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-num">肆</span>
+                <div class="news-content">
+                    <div class="news-title">苹果豪掷300亿美元携手博通打造"美国芯"</div>
+                    <div class="news-desc">📝 苹果与博通达成超300亿美元多年协议，将推动超150亿枚芯片实现美国本土制造，博通投资15亿美元扩建科罗拉多工厂，纳入苹果在美6000亿投资计划。</div>
+                </div>
+            </div>
+            <div class="news-item">
+                <span class="news-num">伍</span>
+                <div class="news-content">
+                    <div class="news-title">华为发布"韬定律"V2：5nm芯片实现三代工艺进化</div>
+                    <div class="news-desc">📝 华为以6年381颗量产芯片为基础，提出"时间缩放"替代传统几何微缩路径。旗舰Kirin 2026首次验证"逻辑折叠"技术，相同工艺下晶体管密度提升相当于传统三代进化，功耗仅为上代59%。
+
+━━━━━━━━━━━━
+📊 市场速览：标普科技股59%跌入熊市 | 韩国KOSPI技术性熊市 | SK海</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">叁</span>
+            <h2 class="section-title">AI 行业日报</h2>
+            <span class="section-sub">AI Daily Report</span>
+        </div>
+        <div class="ai-hero">
+            <div class="ai-hero-title">2026年7月9日 AI 动态速览</div>
+            <div class="ai-hero-stats">
+                <div class="ai-hero-stat">总计 <span class="ai-hero-stat-num">8</span> 条</div>
+                <div class="ai-hero-stat"><span class="ai-hero-stat-num">2</span>模型发布/更新</div><div class="ai-hero-stat"><span class="ai-hero-stat-num">2</span>产品发布/更新</div><div class="ai-hero-stat"><span class="ai-hero-stat-num">2</span>行业动态</div><div class="ai-hero-stat"><span class="ai-hero-stat-num">1</span>论文研究</div><div class="ai-hero-stat"><span class="ai-hero-stat-num">1</span>技巧与观点</div>
+            </div>
+        </div>
+        <div class="ai-nav"><a href="#模型发布更新" class="ai-nav-item">模型发布/更新 (2)</a><a href="#产品发布更新" class="ai-nav-item">产品发布/更新 (2)</a><a href="#行业动态" class="ai-nav-item">行业动态 (2)</a><a href="#论文研究" class="ai-nav-item">论文研究 (1)</a><a href="#技巧与观点" class="ai-nav-item">技巧与观点 (1)</a></div>
+        <div class="ai-section" id="模型发布更新"><div class="ai-section-title">模型发布/更新</div><div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#1</span>
+                        <span class="ai-card-source">OpenAI Blog</span>
+                    </div>
+                    <div class="ai-card-title">OpenAI发布GPT-5 Turbo，推理速度提升3倍</div>
+                    <div class="ai-card-desc">新模型在保持同等性能的前提下，推理延迟降低至原来的三分之一，支持更长上下文窗口</div>
+                    <a href="https://openai.com/blog/gpt5-turbo" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#2</span>
+                        <span class="ai-card-source">Anthropic</span>
+                    </div>
+                    <div class="ai-card-title">Anthropic Claude 4.5发布，代码能力大幅提升</div>
+                    <div class="ai-card-desc">新版本在SWE-bench等编程基准测试中超越竞品，支持100万token上下文</div>
+                    <a href="https://anthropic.com/claude-4.5" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div></div></div><div class="ai-section" id="产品发布更新"><div class="ai-section-title">产品发布/更新</div><div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#3</span>
+                        <span class="ai-card-source">Notion</span>
+                    </div>
+                    <div class="ai-card-title">Notion AI全面升级，支持自定义工作流</div>
+                    <div class="ai-card-desc">用户可创建多步骤AI自动化流程，集成数据库操作和外部API调用</div>
+                    <a href="https://notion.com/ai-update" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#4</span>
+                        <span class="ai-card-source">Midjourney</span>
+                    </div>
+                    <div class="ai-card-title">Midjourney V7发布，视频生成能力上线</div>
+                    <div class="ai-card-desc">支持从文本直接生成15秒高清视频，保持一贯的艺术风格质量</div>
+                    <a href="https://midjourney.com/v7" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div></div></div><div class="ai-section" id="行业动态"><div class="ai-section-title">行业动态</div><div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#5</span>
+                        <span class="ai-card-source">Reuters</span>
+                    </div>
+                    <div class="ai-card-title">欧盟AI法案正式生效，全球监管进入新阶段</div>
+                    <div class="ai-card-desc">高风险AI系统需满足透明度、安全性等严格要求，违规企业面临高额罚款</div>
+                    <a href="https://reuters.com/eu-ai-act" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#6</span>
+                        <span class="ai-card-source">NVIDIA</span>
+                    </div>
+                    <div class="ai-card-title">英伟达发布新一代AI芯片Blackwell Ultra</div>
+                    <div class="ai-card-desc">性能较上代提升4倍，能效比提升2.5倍，预计Q4量产</div>
+                    <a href="https://nvidia.com/blackwell-ultra" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div></div></div><div class="ai-section" id="论文研究"><div class="ai-section-title">论文研究</div><div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#7</span>
+                        <span class="ai-card-source">arXiv</span>
+                    </div>
+                    <div class="ai-card-title">新论文：Scaling Law在小模型上依然有效</div>
+                    <div class="ai-card-desc">研究发现即使是1B以下参数规模的模型，合理的数据配比也能获得显著提升</div>
+                    <a href="https://arxiv.org/abs/2026.xxxxx" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div></div></div><div class="ai-section" id="技巧与观点"><div class="ai-section-title">技巧与观点</div><div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-num">#8</span>
+                        <span class="ai-card-source">Lil'Log</span>
+                    </div>
+                    <div class="ai-card-title">Prompt Engineering进阶：Chain-of-Thought最佳实践</div>
+                    <div class="ai-card-desc">系统总结CoT提示词的设计原则、常见陷阱和优化技巧，附实战案例</div>
+                    <a href="https://lilianweng.github.io/cot-guide" target="_blank" rel="noopener noreferrer" class="ai-card-link">阅读原文 →</a>
+                </div></div></div>
+        <div class="policy-disclaimer">数据来源：AI行业日报 · 共 8 条</div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">肆</span>
+            <h2 class="section-title">今日主文</h2>
+            <span class="section-sub">Featured Article</span>
+        </div>
+        <div class="article-card">
+            <div class="article-title">600亿收购后马斯克终于交卷了</div>
+            <div class="article-summary">马斯克花了600亿美元收购Cursor，不到两周就交出了第一份答卷。 > Grok 4.5不只是编程工具——它瞄准的是法律、金融、网络安全三大高价值赛道。 > 与此同时，OpenAI也放出了大招。今天的AI圈，信息量极大。</div>
+            
+            <div class="article-section">
+                <div class="article-section-title">今天最不能错过的</div>
+                <div class="article-section-content"></div>
+            </div>
+            <div class="article-section">
+                <div class="article-section-title">值得深挖的事</div>
+                <div class="article-section-content"></div>
+            </div>
+            <div class="article-section">
+                <div class="article-section-title">这些也别错过</div>
+                <div class="article-section-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">伍</span>
+            <h2 class="section-title">每日一书</h2>
+            <span class="section-sub">Book of the Day</span>
+        </div>
+        <div class="book-card">
+            <div class="book-title">《刻意忽视》</div>
+            <div class="book-meta">马克 · 曼森 · 自我成长 · 心理学 · 2016 年</div>
+            <div class="book-concept">核心概念：The Backwards Law</div>
+            <div class="book-quote">「曼森颠覆了传统成功学的"积极思维"，提出：痛苦不可避免，但我们可以选择为什么而痛苦。关键不是消除问题，而是选择更好的问题。」</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">陆</span>
+            <h2 class="section-title">每日深修</h2>
+            <span class="section-sub">Evening Study</span>
+        </div>
+        <div class="learning-grid">
+            <div class="learning-card dao">
+                <div class="learning-label">道法详解</div>
+                <div class="learning-quote">「知人者智，自知者明。胜人者有力，自胜者强。知足者富，强行者有志。」</div>
+                <div class="learning-source">——《道德经》</div>
+                <div class="learning-text">了解别人是智慧，看清自己才是真正的通透。战胜别人说明你有力量，能战胜自己的弱点才是真强者。知足的人内心丰盈，坚持前行的人意志坚定。老子告诉我们：人生最大的对手从来不是别人，而是自己。</div>
+                <div class="learning-text" style="border-top:1px dashed var(--border-soft);padding-top:0.5rem;margin-top:0.5rem;"><strong>实践指引：</strong>工作中遇到瓶颈时，先反省自身而非抱怨环境。每天花几分钟自省：今天我战胜了什么惰性？我对现状是否知足而不贪多？这种自知与自胜，才是持续成长的根基。</div>
+            </div>
+            <div class="learning-card finance">
+                <div class="learning-label">金融进阶</div>
+                <div class="learning-quote">MACD背离</div>
+                <div class="learning-text">MACD背离是指股价走势与MACD指标方向相反的现象。顶背离：股价创新高，但MACD没有同步创新高，暗示上涨动力减弱，可能见顶回落。底背离：股价创新低，但MACD没有同步创新低，暗示下跌动力减弱，可能见底反弹。简单说，就是价格和动能"说了不一样的话"。</div>
+                <div class="learning-text" style="border-top:1px dashed var(--border-soft);padding-top:0.5rem;margin-top:0.5rem;"><strong>实战应用：</strong>当股价连创新高但MACD柱子越来越短时，要警惕回调风险，可考虑减仓。反之股价连创新低但MACD柱子缩短时，可能是抄底信号。注意：背离是预警而非确定信号，需结合成交量和其他指标综合判断。</div>
+                <div class="learning-text" style="font-size:0.7rem;color:var(--ink-faded);margin-top:0.5rem;"><strong>延伸阅读：</strong>《日本蜡烛图技术》 Steve Nison 著，技术分析入门经典，详细讲解各类形态与指标的配合运用。
+
+晚安，愿你自知自胜，心明眼亮 🌿</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">柒</span>
+            <h2 class="section-title">政策解读卡</h2>
+            <span class="section-sub">Policy Analysis</span>
+        </div>
+        <div class="policy-header">
+            <div class="policy-title">关于促进人工智能与教育深度融合的指导意见</div>
+            <div class="policy-meta">
+                发文机关：教育部、科技部、工业和信息化部<br>
+                发布日期：2026年7月1日<br>
+                适用对象：各级各类学校、教育科技企业、教师群体
+            </div>
+        </div>
+        <div class="policy-points">
+            <div class="policy-points-title">核心要义</div>
+            <div class="policy-point">到2027年，建成100个AI教育应用示范基地</div><div class="policy-point">将AI素养纳入教师培训必修内容</div><div class="policy-point">支持高校开设人工智能教育相关专业</div><div class="policy-point">鼓励开发面向K12的AI辅助教学工具</div><div class="policy-point">建立AI教育产品准入和质量评估机制</div>
+        </div>
+        <div class="policy-grid">
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <span class="policy-card-num">第3条</span>
+                    <span class="policy-card-tag">教师培训</span>
+                </div>
+                <div class="policy-card-original">将人工智能素养纳入教师继续教育必修课程，每位教师每年不少于40学时</div>
+                <div class="policy-card-explain"><strong>白话：</strong>所有在职教师必须学习AI基础知识，包括如何使用AI工具辅助教学、理解AI教育产品的原理和局限</div>
+                <div class="policy-card-impact"><strong>影响：</strong>教师需要主动学习AI技能，否则可能面临考核压力；但也意味着更多培训资源和职业发展机会</div>
+            </div>
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <span class="policy-card-num">第5条</span>
+                    <span class="policy-card-tag">高校专业</span>
+                </div>
+                <div class="policy-card-original">支持有条件的高校设置人工智能教育交叉学科，培养复合型教育技术人才</div>
+                <div class="policy-card-explain"><strong>白话：</strong>鼓励大学开设'AI+教育'专业方向，既懂技术又懂教学的跨界人才将成为稀缺资源</div>
+                <div class="policy-card-impact"><strong>影响：</strong>对舞蹈/艺术类专业教师而言，可探索'AI+艺术教育'方向，开发智能辅助教学系统</div>
+            </div>
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <span class="policy-card-num">第7条</span>
+                    <span class="policy-card-tag">产品准入</span>
+                </div>
+                <div class="policy-card-original">建立AI教育产品白名单制度，未通过安全性、有效性评估的产品不得进入校园</div>
+                <div class="policy-card-explain"><strong>白话：</strong>进入学校的AI产品需要通过官方审核，确保数据隐私安全、内容合规、教学效果可验证</div>
+                <div class="policy-card-impact"><strong>影响：</strong>教师在选用AI工具时需确认产品是否在白名单内，避免使用未经认证的第三方工具</div>
+            </div>
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <span class="policy-card-num">第9条</span>
+                    <span class="policy-card-tag">资金支持</span>
+                </div>
+                <div class="policy-card-original">设立AI教育专项基金，重点支持中西部和农村地区学校开展AI教育试点</div>
+                <div class="policy-card-explain"><strong>白话：</strong>中央财政拨款支持偏远地区学校购买AI设备、培训教师、开发本地化教学资源</div>
+                <div class="policy-card-impact"><strong>影响：</strong>如果你在中西部高校任教，可关注相关项目申报机会；也可参与志愿支教项目</div>
+            </div>
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <span class="policy-card-num">第11条</span>
+                    <span class="policy-card-tag">评估机制</span>
+                </div>
+                <div class="policy-card-original">将AI应用成效纳入学校办学质量评估指标体系</div>
+                <div class="policy-card-explain"><strong>白话：</strong>学校是否有效使用AI技术将被纳入考核，影响学校评级和资源分配</div>
+                <div class="policy-card-impact"><strong>影响：</strong>学校会更有动力推动AI应用，教师参与AI教学改革可能获得额外认可和支持</div>
+            </div>
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <span class="policy-card-num">第13条</span>
+                    <span class="policy-card-tag">数据安全</span>
+                </div>
+                <div class="policy-card-original">严格保护学生个人信息，AI系统不得收集与教学无关的数据</div>
+                <div class="policy-card-explain"><strong>白话：</strong>使用AI工具时，学生的姓名、成绩、行为数据等受到严格保护，企业不得滥用</div>
+                <div class="policy-card-impact"><strong>影响：</strong>教师在使用AI批改作业、分析学情时，需选择合规工具，避免上传敏感学生信息到不安全的平台</div>
+            </div></div>
+        <div class="policy-compare">
+            <div class="policy-compare-title">重点变化前后对比</div>
+            <table class="policy-compare-table">
+                <tr><th>维度</th><th>此前</th><th>现在</th></tr>
+                <tr><td>AI培训</td><td>自愿参加，无硬性要求</td><td>必修课程，每年40学时</td></tr><tr><td>产品监管</td><td>学校自主采购，无统一标准</td><td>白名单制度，需通过官方评估</td></tr><tr><td>资金支持</td><td>零散项目，覆盖面有限</td><td>专项基金，重点倾斜中西部</td></tr><tr><td>考核指标</td><td>AI应用非必考项</td><td>纳入办学质量评估</td></tr>
+            </table>
+        </div>
+        <div class="policy-checklist">
+            <div class="policy-checklist-title">合规自查清单</div>
+            <div class="policy-checklist-item">我是否已参加学校组织的AI素养培训？</div><div class="policy-checklist-item">我使用的AI教学工具是否在白名单内？</div><div class="policy-checklist-item">我是否了解学生数据保护的相关规定？</div><div class="policy-checklist-item">我是否可以申报AI教育试点项目？</div><div class="policy-checklist-item">我是否关注了AI教育相关的专业发展机会？</div>
+        </div>
+        <div class="policy-timeline">
+            <div class="policy-timeline-title">关键时间线</div>
+            <div class="policy-timeline-item"><span class="policy-timeline-date">2026年7月1日</span> 文件正式发布</div><div class="policy-timeline-item"><span class="policy-timeline-date">2026年9月</span> 首批AI教育示范基地名单公布</div><div class="policy-timeline-item"><span class="policy-timeline-date">2027年1月</span> 教师AI素养培训全面铺开</div><div class="policy-timeline-item"><span class="policy-timeline-date">2027年6月</span> AI教育产品白名单首批发布</div>
+        </div>
+        <div class="policy-disclaimer">条文为示意解读，仅供参考，具体以官方文件为准</div>
+    </section>
+
+</main>
+<footer class="footer">
+    <div class="footer-brand">Today AI Works Again</div>
+    数据来源：赛博天师系统 · 网络资讯聚合 · AI行业日报 · 公众号「今天 AI 又行了」· 每日读书笔记 · 晚间深修<br>
+    运势评分基于传统术数推演，仅供参考娱乐<br>
+    由 Hermes AI 自动生成
+</footer>
+</body>
+</html>
